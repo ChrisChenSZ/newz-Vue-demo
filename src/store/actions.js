@@ -15,5 +15,11 @@ export default {
    } ,
    LOADING_HIDE:({commit})=>{
        commit(types.LONGING_HIDE)
+   },
+   HIDE_FOOTER:({commit})=>{
+       commit(types.HIDE_FOOTER)
+   } ,
+   SHOW_FOOTER:({commit})=>{
+       commit(types.SHOW_FOOTER)
    }
 }

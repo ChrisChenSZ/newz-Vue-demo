@@ -5,28 +5,37 @@ import {
     HEAD_SHOW_SUCCESS,
     HEAD_SHOW_FAIL,
     LONGING_SHOW,
-    LONGING_HIDE
+    LONGING_HIDE,
+    HIDE_FOOTER,
+    SHOW_FOOTER
 
 } from './types'
 
 
 const  state = {
     headShow:true,
-    loading:false
+    loading:false,
+    hideFooter:true
 }
 
 const mutations={
     [HEAD_SHOW_SUCCESS](state){
-        state.headShow=true;
+        state.headShow = true;
     },
     [HEAD_SHOW_FAIL](state){
-        state.headShow=false;
+        state.headShow = false;
     },
     [LONGING_HIDE](state){
-        state.loading=false
+        state.loading = false
     },
     [LONGING_SHOW](state){
-        state.loading=true;
+        state.loading = true;
+    },
+    [HIDE_FOOTER](state){
+        state.hideFooter = false;
+    },
+    [SHOW_FOOTER](state){
+        state.hideFooter = true;
     }
 }
 //
@@ -36,6 +45,9 @@ const getters={
     },
     loading(state){
         return state.loading;
+    },
+    hideFooter(state){
+        return state.hideFooter
     }
 }
 export default {

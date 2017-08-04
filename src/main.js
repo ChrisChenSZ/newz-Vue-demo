@@ -4,14 +4,20 @@ import App from './App.vue'
 import axios from 'axios'
 //引用jsonp
 import jsonp from 'jsonp'
-
-import  VueRouter from 'vue-router'
+import VueRouter from 'vue-router'
 import routerConfig from './router.config'
 import store from './store/index'
 //引入过渡转动
 import loading from './components/loading/index'
+//引入全局过滤器
+import filters from './components/filters'
+//设置给Vue
+Object.keys(filters).forEach(function (key) {
+    Vue.filter(key,filters[key]);
+});
 
-Vue.use(loading)
+
+Vue.use(loading);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
